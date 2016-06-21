@@ -1,0 +1,10 @@
+.agents {
+    background: url(../images/ranch-hands.jpg);
+    background-size: cover;
+    height: 300px;
+    color: aliceblue;
+}
+
+.button {
+    width: 300px;
+}
