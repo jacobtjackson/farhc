@@ -19,7 +19,7 @@ body {
     background-image: url(../images/Ranch1.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    height: 300px;
+    height: 200px;
     width: 100%;
 }
 
@@ -69,4 +69,15 @@ body {
 .building-img {
     height: 40%;
     margin-left: 8px;
+}
+
+.product-title {
+    align-self: center;
+    margin-top: 20px;
+}
+
+.learn-more {
+    margin-left: 50px;
+    margin-right: 50px;
+    border: darkkhaki solid 3px;
 }

@@ -1,0 +1,8 @@
+.about-title {
+    align-self: flex-start;
+    margin: 10px;
+}
+
+.about-paragraph {
+    max-width: 90%;
+}
