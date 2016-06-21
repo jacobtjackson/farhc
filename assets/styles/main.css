@@ -1,0 +1,72 @@
+html {
+    height: 100%;
+    font-size: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#wrapper {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.mdl-layout__header--transparent {
+    background-image: url(../images/Ranch1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+    width: 100%;
+}
+
+.logo {
+    display: block;
+    width: 150px;
+    height: 115px;
+    background-image: url(../images/FRHC%20Logo.jpg);
+    margin-top: 50px;
+    margin-right: 20px;
+}
+
+#company-name {
+    position: absolute;
+    Font-size: 40px;
+    margin-left: 200px;
+    margin-bottom: 20px;
+    bottom: 0;
+    float: right;
+    color: floralwhite;
+}
+
+.mdl-layout__header-row {
+    bottom: 0px;
+    margin: 30px;
+    padding: 0px;
+}
+
+.mdl-navigation {
+    margin-left: 20px;
+}
+
+.slider-div {
+    height: 50%;
+    
+}
+
+.container {
+    position: relative;
+}
+
+.welcome-container {
+    height: 40%;
+    margin-right: 8px;
+}
+
+.building-img {
+    height: 40%;
+    margin-left: 8px;
+}
