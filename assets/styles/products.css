@@ -1,0 +1,13 @@
+.products {
+   background: url(../images/Ranch2.jpg);
+    background-size: cover;
+    height: 300px;
+    color: aliceblue;
+    font-size: 50px
+}
+
+.button {
+    width: 50%;
+    align-self: center;
+    margin-bottom: 16px;
+}

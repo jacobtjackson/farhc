@@ -80,3 +80,7 @@ body {
     margin-right: 50px;
     border: darkkhaki solid 3px;
 }
+
+.mdl-card__title-text {
+    font-size: 50px;
+}
