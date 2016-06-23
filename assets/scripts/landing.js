@@ -7,7 +7,6 @@ $(document).ready(function(){
             nav: true,
             fade: 500,
             maxwidth: 1200
-            maxheight:
       });
 
     });
