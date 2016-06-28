@@ -8,3 +8,112 @@
 .button {
     width: 300px;
 }
+
+#modal input {
+  margin: .5em;
+  padding: 1em;
+  color: #555;
+  border: 0;
+  outline: 0;
+}
+
+#modal {
+  border: 0;
+  outline: 0;
+  font-size: 1em;
+  background: rgb(236, 236, 236);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+  padding: 2em;
+  color: white;
+  width: 15em;
+  height: 20em;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 2px;
+  font-family: inherit;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+#modal {
+  position: absolute;
+  text-align: center;
+  display: block;
+  left: 50%;
+  top: 50%;
+  display: none;
+  transition: width, height 0.15s ease;
+}
+
+#modal.revealed {
+  position: absolute;
+  text-align: center;
+  display: block;
+  width: 20em;
+  height: 27em;
+  box-sizing: border-box;
+  color: white;
+  z-index: 5;
+}
+
+#modal-content {
+  display: none;
+  margin-top: 2em;
+}
+
+#close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: 0;
+  color: #555;
+  padding: 1em;
+  cursor: pointer;
+}
+
+div.morphContainer {
+    position: absolute;
+    left: 10%;
+    top: 500px;
+    margin-left: 100px;
+    width: 200px;
+    height: 70px;
+    background-color: rgb(236, 236, 236);
+    z-index: 9;
+}
+
+div.active {
+    z-index: 30;
+}
+
+h1, p {
+    display: none;
+    margin: 50px;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+    line-height: 25px;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+div.overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.0;
+    z-index: -1;
+}

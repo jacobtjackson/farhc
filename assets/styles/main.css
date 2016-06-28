@@ -54,7 +54,7 @@ body {
     font-weight: 700;
 }
 
-.active {
+a.active {
     color: orangered !important;
 }
 
