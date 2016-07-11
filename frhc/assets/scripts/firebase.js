@@ -124,6 +124,19 @@ function sendPasswordReset() {
     // [END sendpasswordemail];
 };
 
+var user = firebase.auth().currentUser;
+    
+function submit() {
+    var user = firebase.auth().currentUser;
+    user.updateProfile({
+        displayName: displayName,
+        photoURL: photoURL,
+    }).then(function() {
+      // Update successful.
+    }, function(error) {
+      // An error happened.
+    });
+};
 
 /**
 *@function updateProfile
@@ -131,28 +144,38 @@ function sendPasswordReset() {
 */
 function updateProfile() {
     console.log('clicked!');
+    
+    var submit = function() {
+        var user = firebase.auth().currentUser;
+        user.updateProfile({
+            displayName: displayName,
+            photoURL: photoURL,
+        }).then(function() {
+          // Update successful.
+        }, function(error) {
+          // An error happened.
+        });
+    };
+    
     document.getElementById('firebase-auth-container').innerHTML = 
-        '<input class="mdl-textfield__input" style="width:auto;" type="text" id="displayName" name="displayName" placeholder="Full Name"/>'
-    +   '<input class="mdl-textfield__input" style="width:auto;" type="password" id="passwordUpdate" name="password" placeholder="Password"/>'
+        '<input class="mdl-textfield__input" style="width:auto;" type="text" id="display-name" name="displayName" placeholder="Full Name"/>'
     +   '<input class="mdl-textfield__input" style="width:auto;" type="photoURL" id="photoURL" name="photoURL" placeholder="URL of Your Display Photo"/>'
-    +   '<button class="mdl-button mdl-js-button mdl- button--raised" id="submit" name="Submit">Submit</button>'
+    +   '<button class="mdl-button mdl-js-button mdl- button--raised" id="submit" name="Submit" onclick="submit()">Submit</button>'
     ;
     
-    var displayName = document.getElementById('displayName').value;
-    var password = document.getElementById('passwordUpdate').value;
+    var displayName = document.getElementById('display-name').value;
     var photoURL = document.getElementById('photoURL').value;
     var user = firebase.auth().currentUser;
     
-    document.getElementById('submit').addEventListener('click', submit, false);
     function submit() {
+        var user = firebase.auth().currentUser;
         user.updateProfile({
-        displayName: displayName,
-        password: password,
-        photoURL: photoURL,
+            displayName: displayName,
+            photoURL: photoURL,
         }).then(function() {
-            // Update successful.
+          // Update successful.
         }, function(error) {
-            // An error happened.
+          // An error happened.
         });
     };
 };
@@ -190,12 +213,14 @@ function initApp() {
             +   '<h4>' + email + '</h4>'   
             +   '<button class="mdl-button mdl-js-button mdl-button--raised" id="sign-in" name="signin">Sign In</button>&nbsp;&nbsp;&nbsp; '
             +   '<button class="mdl-button mdl-js-button mdl-button--raised" disabled id="verify-email" name="verify-email">Send Email Verification</button>&nbsp;&nbsp;&nbsp;'
-            +   '<button class="mdl-button mdl-js-button mdl-button--raised" id="password-reset" name="verify-email">Send Password Reset Email</button>'
-            +   '<button class="mdl-button mdl-js-button mdl-button--raised" id="update-profile" name="update-profile">Update Profile</button>'
+            +   '<button class="mdl-button mdl-js-button mdl-button--raised" id="password-reset" name="verify-email">Send Password Reset Email</button>&nbsp;&nbsp;&nbsp;'
+            
+            +   '<button class="mdl-button mdl-js-button mdl-button--raised" id="update-profile" name="update-profile" onclick="updateProfile()">Update Profile</button>&nbsp;&nbsp;&nbsp;'
+            +   '<a href="assets/pages/documents.html">My Documents</a>'
             ;
             document.getElementById('sign-in').textContent = 'Sign out';
             document.getElementById('sign-in').addEventListener('click', toggleSignIn, false) = 'Sign out';
-            document.getElementById('update-profile').addEventListener('click', updateProfile, false);
+            document.getElementById('update-profile').addEventListener('click', updateProfile(), false);
             if (!emailVerified) {
                 document.getElementById('verify-email').disabled =   false;
             }

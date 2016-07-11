@@ -30,5 +30,7 @@ $(document).ready(function(){
         
     $('#login').animatedDialog({
         content: "~ .animated-dialog-content"
-    })
+    });
+    
+    
 });
